@@ -27,7 +27,10 @@ public class DemoApplication extends SpringBootServletInitializer {
 
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		log.info("Hello to " + name);
+		log.trace("Trace logging " + name);
+		log.info("Info  logging " + name);
+		log.warn("Warn  logging " + name);
+		log.error("Error logging " + name);
 		return String.format("Hello %s!", name);
 	}
 
